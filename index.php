@@ -8,7 +8,61 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
   </head>
   <body>
-    <div style="width:100px;height:300px;background-color: #666">
+    <div class="container-fluid" style="background-color: #999;padding: 20px;">
+      <div class="container" style="background-color: #FFF;">
+        <div class="row">
+          <div class="col-md-8">
+
+            <div class="row" style="padding: 20px;">
+              <div class="col-md-8">
+                <input type="text" name="address" class="form-control" />
+              </div>
+              <div class="col-md-2">
+                <button type="submit" class="btn btn-primary">Buscar</button>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+
+            <div class="row" style="padding-bottom: 10px;">
+              <div class="col-md-4">
+                <input type="checkbox" name="pontos"> Pontos de ônibus
+              </div>
+              <div class="col-md-4">
+                <input type="checkbox" name="bus"> Ônibus
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-4" style="padding: 10px;">
+            João - <br />
+            Julia Litvinoff Justus - 8922177<br />
+            Lucas Saccumann<br />
+          </div>
+        </div>
+
+        <div class="container-fluid" style="background-color: #1122AA">mapa</div>
+
+
+
+      </div>
+
+
+
+
+
+<!--       <div class="container" style="background-color: #FFF">
+          <form>
+            <input type="text" name="address" class="form-control" />
+            <button type="submit" class="btn btn-primary">Buscar</button>
+          </form>
+      </div> -->
+
+
+
+
+
+
+
 
     </div>
 
