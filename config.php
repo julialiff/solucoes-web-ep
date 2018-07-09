@@ -5,7 +5,7 @@ require_once 'vendor/autoload.php';
 
 $ops = array(
   "profile" => "default",
-  "region" => "us-east-2",
+  "region" => null,
   "version" => "latest"
 );
 
