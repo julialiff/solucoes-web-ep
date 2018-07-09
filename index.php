@@ -46,10 +46,11 @@ ini_set('display_errors', 'On');
         </div>
 
         <div class="container-fluid" style="background-color: #1122AA">
-        <?php #require 'config.php' ?>
-          mapa
-          <?php #echo "Google Key"+ $google_key
-          #echo "<br /> Sptrans key: " + $sptrans_key ?>
+          MAPA
+          <!-- Getting API Keys on S3: -->
+          <?php require 'config.php' ?>
+          <?php echo "Google Key"+ $google_key
+                echo "<br /> Sptrans key: " + $sptrans_key ?>
 
 
 
