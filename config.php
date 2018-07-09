@@ -4,7 +4,7 @@ ini_set('display_errors', 'On');
 require_once 'vendor/autoload.php';
 
 $ops = array(
-  "profile" => "s3-access",
+  "profile" => "default",
   "region" => "us-east-2",
   "version" => "latest"
 );
