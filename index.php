@@ -48,11 +48,23 @@ ini_set('display_errors', 'On');
         <div class="container-fluid" style="background-color: #1122AA">
           MAPA
           <!-- Getting API Keys on S3: -->
-          <?php require 'config.php' ?>
-          <?php echo "Google Key"+ $google_key
-                echo "<br /> Sptrans key: " + $sptrans_key ?>
+          <?php require 'config.php'; ?>
+          <?php echo "Google Key $google_key";
+                echo "<br /> Sptrans key:  $sptrans_key"; ?>
 
+ <div id="googleMap" style="width:100%;height:400px;"></div>
 
+<script>
+function myMap() {
+var mapProp= {
+    center:new google.maps.LatLng(51.508742,-0.120850),
+    zoom:5,
+};
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
 
 
 
