@@ -34,13 +34,21 @@
 
           </div>
           <div class="col-md-4" style="padding: 10px;">
-            João Marcelo Rossetto Fernandes da Silva - 9277833<br />
+            João M. Rossetto F. da Silva - 9277833<br />
             Julia Litvinoff Justus - 8922177<br />
             Lucas Saccumann Miranda - 8921687<br />
           </div>
         </div>
 
-        <div class="container-fluid" style="background-color: #1122AA">mapa</div>
+        <div class="container-fluid" style="background-color: #1122AA">
+          <?php require 'config.php' ?>
+          mapa
+
+
+
+
+
+        </div>
 
 
 
