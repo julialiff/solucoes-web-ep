@@ -45,15 +45,14 @@ ini_set('display_errors', 'On');
           </div>
         </div>
 
-        <div class="container-fluid" style="background-color: #1122AA">
-          MAPA
+        <div class="container-fluid">
           <!-- Getting API Keys on S3: -->
           <?php require 'config.php'; ?>
 
 
 
 
-<div id="map" style="height: 100%;"></div>
+    <div id="map" style="height: 100%;"></div>
     <script>
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
@@ -62,7 +61,7 @@ ini_set('display_errors', 'On');
       var map, infoWindow;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
+          center: {lat: -23.533, -46.625},
           zoom: 6
         });
         infoWindow = new google.maps.InfoWindow;
