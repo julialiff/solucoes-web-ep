@@ -13,7 +13,8 @@ $ops = array(
 $clientS3 = new Aws\S3\S3Client($ops);
 $clientS3->registerStreamWrapper();
 
-$chave_api = file_get_contents('s3://each-api-sptrans/chave_sptrans.txt');
+$google_key = file_get_contents('s3://ach2077-ep-web/google-api-key.txt');
+$sptrans_key = file_get_contents('s3://ach2077-ep-web/sptrans-api-key.txt');
 
 $cookie = '/tmp/cookie.txt';
 $url = 'http://api.olhovivo.sptrans.com.br/v2.1';
@@ -21,7 +22,7 @@ $url = 'http://api.olhovivo.sptrans.com.br/v2.1';
 //echo $url . '/Login/Autenticar?token=' . $chave_api;
 
 $ch = curl_init();
-curl_setopt ($ch, CURLOPT_URL, $url . '/Login/Autenticar?token=' . $chave_api);
+curl_setopt ($ch, CURLOPT_URL, $url . '/Login/Autenticar?token=' . $sptrans_key);
 curl_setopt ($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Length: 0'));
 curl_setopt ($ch, CURLOPT_COOKIEFILE, $cookie);
