@@ -16,6 +16,10 @@ $clientS3->registerStreamWrapper();
 $google_key = file_get_contents('s3://ach2077-ep-web/google-api-key.txt');
 $sptrans_key = file_get_contents('s3://ach2077-ep-web/sptrans-api-key.txt');
 
+echo "Google Key"+ $google_key
+echo "<br /> Sptrans key: " + $sptrans_key
+
+
 $cookie = '/tmp/cookie.txt';
 $url = 'http://api.olhovivo.sptrans.com.br/v2.1';
 
