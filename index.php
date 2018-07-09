@@ -49,22 +49,34 @@ ini_set('display_errors', 'On');
           MAPA
           <!-- Getting API Keys on S3: -->
           <?php require 'config.php'; ?>
-          <?php echo "Google Key $google_key";
-                echo "<br /> Sptrans key:  $sptrans_key"; ?>
 
- <div id="googleMap" style="width:100%;height:400px;"></div>
 
-<script>
-function myMap() {
-var mapProp= {
-    center:new google.maps.LatLng(51.508742,-0.120850),
-    zoom:5,
-};
-var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-}
-</script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo $google_key; ?>&callback=myMap"></script>
+
+        <div id="map"></div>
+            <script>
+              function initMap() {
+                var myLatLng = {lat: -25.363, lng: 131.044};
+
+                // Create a map object and specify the DOM element
+                // for display.
+                var map = new google.maps.Map(document.getElementById('map'), {
+                  center: myLatLng,
+                  zoom: 4
+                });
+
+                // Create a marker and set its position.
+                var marker = new google.maps.Marker({
+                  map: map,
+                  position: myLatLng,
+                  title: 'Hello World!'
+                });
+              }
+
+            </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo $google_key; ?>&callback=initMap"
+        async defer></script>
+
 
 
 
