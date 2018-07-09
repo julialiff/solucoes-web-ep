@@ -15,7 +15,7 @@
 
             <div class="row" style="padding: 20px;">
               <div class="col-md-8">
-                <input type="text" name="address" class="form-control" />
+                <input type="text" name="address" class="form-control" placeholder="Endereço" />
               </div>
               <div class="col-md-2">
                 <button type="submit" class="btn btn-primary">Buscar</button>
@@ -34,9 +34,9 @@
 
           </div>
           <div class="col-md-4" style="padding: 10px;">
-            João - <br />
+            João Marcelo Rossetto Fernandes da Silva - 9277833<br />
             Julia Litvinoff Justus - 8922177<br />
-            Lucas Saccumann<br />
+            Lucas Saccumann Miranda - 8921687<br />
           </div>
         </div>
 
