@@ -61,7 +61,7 @@ ini_set('display_errors', 'On');
       var map, infoWindow;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -23.533, -46.625},
+          center: {lat: -23.533, lng: -46.625},
           zoom: 6
         });
         infoWindow = new google.maps.InfoWindow;
