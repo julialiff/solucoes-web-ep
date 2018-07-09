@@ -1,3 +1,4 @@
+<?php require 'config.php' ?>
 <html>
   <head>
     <link rel="stylesheet" href="css/bootstrap-grid.css" type="text/css">
@@ -41,8 +42,9 @@
         </div>
 
         <div class="container-fluid" style="background-color: #1122AA">
-          <?php require 'config.php' ?>
           mapa
+          <?php echo "Google Key"+ $google_key
+          echo "<br /> Sptrans key: " + $sptrans_key ?>
 
 
 
