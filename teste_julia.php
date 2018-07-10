@@ -67,7 +67,13 @@ ini_set('display_errors', 'On');
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -23.533, lng: -46.625},
           zoom: 13,
-          mapTypeId: 'roadmap'
+          mapTypeId: 'roadmap',
+          styles:[{
+            "featureType": "transit.station.bus",
+            "stylers": [{
+              "visibility": "off"
+            }]
+          }]
         });
 
         // Create the search box and link it to the UI element.
