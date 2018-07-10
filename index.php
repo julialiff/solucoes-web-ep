@@ -86,7 +86,7 @@ ini_set('display_errors', 'On');
       function initAutocomplete() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -23.533, lng: -46.625},
-          zoom: 13,
+          zoom: 17,
           mapTypeId: 'roadmap',
           styles:[{
             "featureType": "poi",
