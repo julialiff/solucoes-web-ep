@@ -23,7 +23,7 @@ ini_set('display_errors', 'On');
                 <input type="text" name="address" class="form-control" placeholder="Endereço" />
               </div>
               <div class="col-md-2">
-                <button type="submit" class="btn btn-primary">Buscar</button>
+                <button type="submit" name='addressBtn'class="input_submit">Buscar</button>
               </div>
               <div class="col-md-2"></div>
             </div>
@@ -45,14 +45,15 @@ ini_set('display_errors', 'On');
           </div>
         </div>
 
-        <div class="container-fluid">
+        <div class="container-fluid" style="background-color: #1122AA">
+          MAPA
           <!-- Getting API Keys on S3: -->
           <?php require 'config.php'; ?>
 
 
 
 
-    <div id="map" style="height: 100%;"></div>
+<div id="map" style="height: 100%;"></div>
     <script>
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
@@ -61,7 +62,7 @@ ini_set('display_errors', 'On');
       var map, infoWindow;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -23.533, lng: -46.625},
+          center: {lat: -34.397, lng: 150.644},
           zoom: 6
         });
         infoWindow = new google.maps.InfoWindow;
@@ -94,6 +95,33 @@ ini_set('display_errors', 'On');
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
       }
+
+      function searchAddressMap(endereco) {
+        geocoder.geocode({ 'address': endereco + ', Brasil', 'region': 'BR' }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                if (results[0]) {
+                    var latitude = results[0].geometry.location.lat();
+                    var longitude = results[0].geometry.location.lng();
+ 
+                    $('#txtEndereco').val(results[0].formatted_address);
+                    $('#txtLatitude').val(latitude);
+                    $('#txtLongitude').val(longitude);
+ 
+                    var location = new google.maps.LatLng(latitude, longitude);
+                    marker.setPosition(location);
+                    map.setCenter(location);
+                    map.setZoom(16);
+                }
+            }
+        });
+    }
+
+      $("#addressBtn").click(function() {
+        if($(this).val() != "")
+            searchAddressMap($("#address").val());
+    })
+
+
     </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo $google_key; ?>&callback=initMap"
         async defer></script>
