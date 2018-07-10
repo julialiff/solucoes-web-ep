@@ -76,7 +76,7 @@ ini_set('display_errors', 'On');
             };
 
             infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
+            infoWindow.setContent('Localização encontrada.');
             infoWindow.open(map);
             map.setCenter(pos);
           }, function() {
@@ -91,8 +91,8 @@ ini_set('display_errors', 'On');
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');
+                              'Erro: não conseguimos te localizar' :
+                              'Erro: Seu browser não suporta geolocalização.');
         infoWindow.open(map);
       }
 
