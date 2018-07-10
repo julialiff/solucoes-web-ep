@@ -30,7 +30,7 @@ ini_set('display_errors', 'On');
 
             <div class="row" style="padding-bottom: 10px;">
               <div class="col-md-4">
-                <input type="checkbox" name="pontos"> Pontos de ônibus
+                <input type="checkbox" name="pontos" id="pontos" onclick="mostrarPontos()"> Pontos de ônibus
               </div>
               <div class="col-md-4">
                 <input type="checkbox" name="bus"> Ônibus
@@ -63,6 +63,21 @@ ini_set('display_errors', 'On');
       // parameter when you first load the API. For example:
       // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
+      function mostrarPontos() {
+        // Get the checkbox
+        var checkBox = document.getElementById("pontos");
+        // Get the output text
+        var visibility = "";
+
+        // If the checkbox is checked, display the output text
+        if (checkBox.checked == true){
+          visibility = "on";
+        } else {
+          visibility = "off";
+        }
+      }
+
+
       function initAutocomplete() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -23.533, lng: -46.625},
@@ -71,7 +86,7 @@ ini_set('display_errors', 'On');
           styles:[{
             "featureType": "poi",
             "stylers": [{
-              "visibility": "off"
+              "visibility": visibility
               }]
             },
             {
