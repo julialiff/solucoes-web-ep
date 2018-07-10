@@ -1,219 +1,200 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+?>
 
-<head>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/bootstrap-grid.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+  </head>
+  <body>
+    <div class="container-fluid" style="background-color: #999;padding: 20px;">
+      <div class="container" style="background-color: #FFF;">
+        <div class="row">
+          <div class="col-md-8">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>+MOB</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
-
-</head>
-
-<body>
-    <!-- Navegação -->
-    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle">
-        <i class="fa fa-bars"></i>
-    </a>
-    <nav id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">
-                <i class="fa fa-times"></i>
-            </a>
-            <li class="sidebar-brand">
-                <a class="js-scroll-trigger" href="#top">+MOB</a>
-            </li>
-            <li>
-                <a class="js-scroll-trigger" href="#top">Home</a>
-            </li>
-            <li>
-                <a class="js-scroll-trigger" href="#about">Sobre</a>
-            </li>
-            <li>
-                <a class="js-scroll-trigger" href="#services">Serviços</a>
-            </li>
-            <li>
-                <a class="js-scroll-trigger" href="#contact" onclick=$( "#menu-close").click();>Contato</a>
-            </li>
-        </ul>
-    </nav>
-
-
- <!-- Header -->
-    <header class="header" id="top">
-        <div class="text-vertical-center">
-            <h1 class="titulo">+MOB</h1>
-            <h3 class="subtitulo"><b>Alcance novos lugares </b> </h3>
-            <br>
-            <a href="#about" class="btn btn-dark btn-lg js-scroll-trigger ">Download</a>
-        </div>
-    </header>
-
-    <!-- About -->
-     <section id="about" class="about">
-        <div class="container text-center">
-            <h2>Caminhe pela cidade com mais independência e segurança.</h2>
-
-
-        </div>
-    </section>
-    <!-- /About -->
-
-
-   <!-- Services -->
-    <section id="services" class="services bg-primary text-white verde">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-lg-10 mx-auto">
-                    <h2>Funcionalidades</h2>
-                    <hr class="small">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-6">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                    <i class="fa fa-circle fa-stack-2x "></i>
-                    <i class="fa fa-bus fa-stack-1x text-primary"></i>
-                  </span>
-                                <h4>
-                                    <strong>Ônibus</strong>
-                                </h4>
-                                <p>Saiba o nome do ônibus que está chegando, escutando através do seu app.</p>
-
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-road fa-stack-1x text-primary"></i>
-                  </span>
-                                <h4>
-                                    <strong>Atravesse a rua com segurança</strong>
-                                </h4>
-                                <p>É possível saber quando o semáforo fechou, o app te avisa com um sinal sonoro quando é seguro atravessar.</p>
-
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-map-marker fa-stack-1x text-primary"></i>
-                  </span>
-                                <h4>
-                                    <strong>GPS</strong>
-                                </h4>
-                                <p>Com o +MOB você sabe exatamente aonde está indo, sem precisar pedir informações o tempo todo.</p>
-
-                            </div>
-                        </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="row" style="padding: 20px;">
+              <div class="col-md-8">
+                <input type="text" id="pac-input" name="address" class="form-control" placeholder="Endereço" />
+              </div>
+              <div class="col-md-2">
+                <button type="submit" class="btn btn-primary">Buscar</button>
+              </div>
+              <div class="col-md-2"></div>
             </div>
-        </div>
-    </section>
-    <!-- /Services -->
 
-    <!-- Callout -->
-    <aside class="callout">
-        <div class="text-vertical-center">
-            <h1>Chegue mais longe</h1>
-        </div>
-    </aside>
-
-
-
-    <!-- Map -->
-    <section id="contact" class="map">
-       <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d467689.7972388095!2d-46.87549840000162!3d-23.68216037657702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce448183a461d1%3A0x9ba94b08ff335bae!2zU8OjbyBQYXVsbywgU1A!5e0!3m2!1spt-BR!2sbr!4v1513447300357" style="border:0" allowfullscreen></iframe>
-        <br/>
-        <small>
-        <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d467689.7972388095!2d-46.87549840000162!3d-23.68216037657702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce448183a461d1%3A0x9ba94b08ff335bae!2zU8OjbyBQYXVsbywgU1A!5e0!3m2!1spt-BR!2sbr!4v1513447300357"></a>
-      </small>
-    </section>
-
-
-        <!-- Call to Action -->
-    <aside class="call-to-action bg-primary text-white verde" >
-        <div class="container text-center">
-            <h3>Baixe o App na plataforma de sua preferência</h3>
-            <a href="#" class="btn btn-lg btn-light">Download IOS</a>
-            <a href="#" class="btn btn-lg btn-dark">Download Android</a>
-        </div>
-    </aside>
-
-
-    <!-- Rodapé -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto text-center">
-                    <h4>
-                        <strong>+MOB</strong>
-                    </h4>
-
-                    <ul class="list-unstyled">
-                        <li>
-                            <i class="fa fa-envelope-o fa-fw"></i>
-                            <a href="mailto:name@example.com">mais@mob.com</a>
-                        </li>
-                    </ul>
-                    <br>
-                    <ul class="list-inline">
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fa fa-facebook fa-fw fa-3x"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fa fa-twitter fa-fw fa-3x"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fa fa-dribbble fa-fw fa-3x"></i>
-                            </a>
-                        </li>
-                    </ul>
-
-                </div>
+            <div class="row" style="padding-bottom: 10px;">
+              <div class="col-md-4">
+                <input type="checkbox" name="pontos" id="pontos" onclick="mostrarPontos(this)"> Pontos de ônibus
+              </div>
+              <div class="col-md-4">
+                <input type="checkbox" name="bus"> Ônibus
+              </div>
             </div>
+
+          </div>
+          <div class="col-md-4" style="padding: 10px;">
+            João M. Rossetto F. da Silva - 9277833<br />
+            Julia Litvinoff Justus - 8922177<br />
+            Lucas Saccumann Miranda - 8921687<br />
+          </div>
         </div>
-        <a id="to-top" href="#top" class="btn btn-dark btn-lg js-scroll-trigger">
-            <i class="fa fa-chevron-up fa-fw fa-1x"></i>
-        </a>
-    </footer>
-    <!-- /Rodapé -->
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/popper/popper.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <div class="container-fluid">
+          <!-- Getting API Keys on S3: -->
+          <?php require 'config.php'; ?>
 
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for this template -->
-    <script src="js/stylish-portfolio.js"></script>
 
-    <!-- Importa o Javascript utilizado neste projeto -->
-    <script src="js/script.js"></script>
 
-</body>
+   <!-- <input id="pac-input" class="controls" type="text" placeholder="Search Box"> -->
+    <div id="map" style="height: 100%;"></div>
+    <script>
+      // This example adds a search box to a map, using the Google Place Autocomplete
+      // feature. People can enter geographical searches. The search box will return a
+      // pick list containing a mix of places and predicted search terms.
 
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+
+      var styles;
+
+      function mostrarPontos(checkbox) {
+        if(checkbox.checked) {
+          map.setOptions({styles: styles['paradas']});
+        } else {
+          map.setOptions({styles: styles['semParadas']});
+        }
+      }
+
+
+      function initAutocomplete() {
+        styles();
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -23.533, lng: -46.625},
+          zoom: 18,
+          mapTypeId: 'roadmap'
+        });
+
+        map.setOptions({styles: styles['semParadas']});
+        $(".checkbox").removeAttr("disabled");
+
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
+
+        var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+
+          // Clear out the old markers.
+          markers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+          markers = [];
+
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location
+            }));
+
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        });
+      }
+
+      function styles(){
+        styles = {
+        default: null,
+        semParadas: [
+          {
+            featureType: 'transit.station.bus',
+            elementType: 'labels.icon',
+            stylers: [{visibility: 'off'}]
+          }
+        ]};
+      }
+
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo $google_key; ?>&libraries=places&callback=initAutocomplete"
+         async defer></script>
+
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+
+
+<!--       <div class="container" style="background-color: #FFF">
+          <form>
+            <input type="text" name="address" class="form-control" />
+            <button type="submit" class="btn btn-primary">Buscar</button>
+          </form>
+      </div> -->
+
+
+
+
+
+
+
+
+    </div>
+
+    <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  </body>
 </html>
