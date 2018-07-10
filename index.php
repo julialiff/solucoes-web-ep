@@ -23,7 +23,7 @@ ini_set('display_errors', 'On');
                 <input type="text" name="address" class="form-control" placeholder="Endereço" />
               </div>
               <div class="col-md-2">
-                <input type="button" id="addressBtn" name="addressBtn" value="Mostrar no mapa"/>
+                <button type="submit" name='addressBtn'class="input_submit">Buscar</button>
               </div>
               <div class="col-md-2"></div>
             </div>
@@ -59,8 +59,6 @@ ini_set('display_errors', 'On');
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
-
-
       var map, infoWindow;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -98,21 +96,30 @@ ini_set('display_errors', 'On');
         infoWindow.open(map);
       }
 
-      var request = {
-      query: 'Masp',
-      fields: ['photos', 'formatted_address', 'name', 'rating'],
-      service = new google.maps.places.PlacesService(map);
-      service.findPlaceFromQuery(request, callback);
-      }
+      function searchAddressMap(endereco) {
+        geocoder.geocode({ 'address': endereco + ', Brasil', 'region': 'BR' }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                if (results[0]) {
+                    var latitude = results[0].geometry.location.lat();
+                    var longitude = results[0].geometry.location.lng();
+ 
+                    $('#txtEndereco').val(results[0].formatted_address);
+                    $('#txtLatitude').val(latitude);
+                    $('#txtLongitude').val(longitude);
+ 
+                    var location = new google.maps.LatLng(latitude, longitude);
+                    marker.setPosition(location);
+                    map.setCenter(location);
+                    map.setZoom(16);
+                }
+            }
+        });
+    }
 
-      function callback(results, status) {
-        if (status == google.maps.places.PlacesServiceStatus.OK) {
-          for (var i = 0; i < results.length; i++) {
-           var place = results[i];
-           createMarker(results[i]);
-          }
-        }
-      }
+      $("#addressBtn").click(function() {
+        if($(this).val() != "")
+            searchAddressMap($("#address").val());
+    })
 
 
     </script>
