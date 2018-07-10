@@ -63,6 +63,9 @@ ini_set('display_errors', 'On');
       // parameter when you first load the API. For example:
       // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
+
+      visibility = "off";
+
       function mostrarPontos() {
         // Get the checkbox
         var checkBox = document.getElementById("pontos");
