@@ -69,6 +69,12 @@ ini_set('display_errors', 'On');
           zoom: 13,
           mapTypeId: 'roadmap',
           styles:[{
+            "featureType": "poi",
+            "stylers": [{
+              "visibility": "off"
+              }]
+            },
+            {
             "featureType": "transit.station.bus",
             "stylers": [{
               "visibility": "off"
