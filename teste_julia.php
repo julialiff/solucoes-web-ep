@@ -78,7 +78,6 @@ ini_set('display_errors', 'On');
         } else {
           visibility = "off";
         }
-        initAutocomplete();
       }
 
 
@@ -90,13 +89,13 @@ ini_set('display_errors', 'On');
           styles:[{
             "featureType": "poi",
             "stylers": [{
-              "visibility": visibility
+              "visibility": "off"
               }]
             },
             {
             "featureType": "transit.station.bus",
             "stylers": [{
-              "visibility": "off"
+              "visibility": visibility
             }]
           }]
         });
