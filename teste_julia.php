@@ -78,6 +78,7 @@ ini_set('display_errors', 'On');
         } else {
           visibility = "off";
         }
+        initAutocomplete();
       }
 
 
