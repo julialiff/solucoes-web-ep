@@ -30,7 +30,7 @@ ini_set('display_errors', 'On');
 
             <div class="row" style="padding-bottom: 10px;">
               <div class="col-md-4">
-                <input type="checkbox" name="pontos" id="pontos" onclick="mostrarPontos()"> Pontos de ônibus
+                <input type="checkbox" name="pontos" id="pontos" onclick="mostrarPontos(this)"> Pontos de ônibus
               </div>
               <div class="col-md-4">
                 <input type="checkbox" name="bus"> Ônibus
@@ -64,43 +64,27 @@ ini_set('display_errors', 'On');
       // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
 
-      visibility = "off";
+      var styles;
 
-      function mostrarPontos() {
-        // Get the checkbox
-        var checkBox = document.getElementById("pontos");
-        // Get the output text
-        var visibility = "";
-
-        // If the checkbox is checked, display the output text
-        if (checkBox.checked == true){
-          visibility = "on";
+      function mostrarPontos(checkbox) {
+        if(checkbox.checked) {
+          map.setOptions({styles: styles['paradas']});
         } else {
-          visibility = "off";
+          map.setOptions({styles: styles['semParadas']});
         }
-        console.log(visibility)
-        initAutocomplete();
       }
 
 
       function initAutocomplete() {
+        styles();
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -23.533, lng: -46.625},
-          zoom: 13,
-          mapTypeId: 'roadmap',
-          styles:[{
-            "featureType": "poi",
-            "stylers": [{
-              "visibility": "off"
-              }]
-            },
-            {
-            "featureType": "transit.station.bus",
-            "stylers": [{
-              "visibility": visibility
-            }]
-          }]
+          zoom: 18,
+          mapTypeId: 'roadmap'
         });
+
+        map.setOptions({styles: styles['semParadas']});
+        $(".checkbox").removeAttr("disabled");
 
         // Create the search box and link it to the UI element.
         var input = document.getElementById('pac-input');
@@ -161,6 +145,19 @@ ini_set('display_errors', 'On');
           map.fitBounds(bounds);
         });
       }
+
+      function styles(){
+        styles = {
+        default: null,
+        semParadas: [
+          {
+            featureType: 'transit.station.bus',
+            elementType: 'labels.icon',
+            stylers: [{visibility: 'off'}]
+          }
+        ]};
+      }
+
 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo $google_key; ?>&libraries=places&callback=initAutocomplete"
